@@ -1,0 +1,225 @@
+@import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;700;800&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+$light_red: hsl(0, 100%, 67%);
+$orangey_yellow: hsl(39, 100%, 56%);
+$green_teal: hsl(166, 100%, 37%);
+$cobalt_blue: hsl(234, 85%, 45%);
+
+$light_slate_blue: hsl(252, 100%, 67%);
+$light_royal_blue: hsl(241, 81%, 54%);
+$violet_blue: hsla(256, 72%, 46%, 1);
+$persian_blue: hsla(241, 72%, 46%, 0);
+
+$white: hsl(0, 0%, 100%);
+$pale_blue: hsl(221, 100%, 96%);
+$light_lavender: hsl(241, 100%, 89%);
+$dark_gray_blue: hsl(224, 30%, 27%);
+
+body {
+  font-family: "Hanken Grotesk", sans-serif;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.container {
+}
+
+.result_summary_container {
+  box-shadow: 15px 15px 286px -25px rgba(0, 0, 0, 0.15);
+  border-radius: 1.5rem;
+  overflow: hidden;
+  height: 32rem;
+  width: 42rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.result_container {
+  border-radius: 1.5rem;
+  background: linear-gradient($light_slate_blue, $light_royal_blue);
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 2rem;
+
+  h1 {
+    color: $light_lavender;
+    font-weight: 500;
+  }
+}
+
+.score {
+  height: 12rem;
+  width: 12rem;
+  border-radius: 50%;
+  background: linear-gradient($violet_blue, $persian_blue);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  h2 {
+    color: $white;
+    font-size: 4rem;
+  }
+  h3 {
+    color: $light_lavender;
+    font-weight: 500;
+    opacity: 0.6;
+  }
+}
+
+.score-analysis {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  h4 {
+    font-size: 2.5rem;
+    color: $white;
+    font-weight: 500;
+  }
+  p {
+    color: $light_lavender;
+    text-align: center;
+    word-spacing: 5px;
+  }
+}
+
+.summary_container {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+}
+
+.summary_items {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.2rem;
+}
+.summary_item {
+  padding: 0.7rem;
+  width: 100%;
+  height: 3.5rem;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.summary_title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  column-gap: 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.reaction {
+  background-color: hsla(0, 100%, 67%, 0.08);
+  .summary_title {
+    color: $light_red;
+  }
+}
+
+.memory {
+  background-color: hsla(39, 100%, 56%, 0.08);
+  .summary_title {
+    color: $orangey_yellow
+  }
+}
+
+.verbal {
+  background-color: hsla(166, 100%, 37%, 0.08);
+  .summary_title {
+    color: $green_teal;
+  }
+}
+
+.visual {
+  background-color: hsla(234, 85%, 45%, 0.08);
+  .summary_title {
+    color: $cobalt_blue
+  }
+}
+
+.summary_score {
+  font-weight: 600;
+  font-size: 1.1rem;
+  span:nth-child(2) {
+    color: $dark_gray_blue;
+    opacity: 0.4;
+  }
+}
+
+.continue {
+  border: none;
+  height: 3.2rem;
+  background-color: $dark_gray_blue;
+  color: $white;
+  border-radius: 25px;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+.continue:hover {
+  background-color: $cobalt_blue;
+}
+
+.attribution {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 2rem;
+  font-size: 11px;
+  text-align: center;
+
+  a {
+    color: hsl(228, 45%, 44%);
+  }
+}
+
+@media screen and (width <= 680px) {
+  .container {
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .result_summary_container {
+    width: 95%;
+    max-width: 30rem;
+    height: auto;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+
+  .attribution {
+    bottom: 0rem;
+  }
+}
+
+@media screen and (width<=500px) {
+  .container {
+    padding: 0.5rem;
+  }
+  .result_container {
+    padding: 1.5rem;
+  }
+  .summary_container {
+    padding: 1rem;
+  }
+}
